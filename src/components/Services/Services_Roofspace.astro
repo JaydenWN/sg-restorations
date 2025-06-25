@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import ServicesWhy from "./Services_Why.astro";
+import serviceImage from "@images/roof-space-remediation.jpg";
+import ServicesCta from "./Services_Cta.astro";
+---
+
+<section>
+    <div class="container">
+        <h2>Roof Space Remediation Central Coast</h2>
+        <p>
+            Roof spaces are often out of sight but can hide major mould and
+            moisture problems. We inspect and remediate roof cavities affected
+            by leaks, poor ventilation or past water damage. Our team safely
+            removes contamination, treats affected surfaces and helps improve
+            airflow to prevent future issues.
+        </p>
+        <Image
+            src={serviceImage}
+            alt="Roof space mould checks on the central coast"
+            class="image"
+        />
+        <ServicesWhy
+            title="Why Choose SG Restorations for Roof Space Remediation"
+            reasons={[
+                "We access hard to reach roof areas safely and efficiently.",
+                "Thorough cleaning and treatment with professional equipment.",
+                "Prevents further spread of mould into living spaces.",
+            ]}
+        />
+        <ServicesCta
+            title="Clean Out Your Roof Space for Good"
+            text="Get in touch today to book your roof space assessment and remediation."
+        />
+    </div>
+</section>
+
+<style>
+    .image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

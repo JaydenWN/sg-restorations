@@ -1,0 +1,23 @@
+---
+import AboutCertified from "../components/About/About_Certified.astro";
+import AboutLocations from "../components/About/About_Locations.astro";
+import AboutSG from "../components/About/About_SG.astro";
+import AboutValues from "../components/About/About_Values.astro";
+import AboutWhy from "../components/About/About_Why.astro";
+import SubpageHero from "../components/common/Subpage_Hero.astro";
+import Layout from "../layouts/Base_Layout.astro";
+import AboutContact from "../components/About/About_Contact.astro";
+---
+
+<Layout title="About Me" description="Lorem ipsum dolor sit amet">
+	<SubpageHero
+		title="Your Local Experts in Mould and Moisture Control"
+		text="At SG Restorations, we specialise in mould and moisture removal for homes and properties across the Central Coast, Newcastle and Sydney. As a small family-run business, we offer honest advice, reliable service, and a personal approach that puts your health and home first. Whether you are buying a new property or dealing with an ongoing issue, we are here to help you breathe easy again."
+	/>
+	<AboutSG />
+	<AboutValues />
+	<AboutCertified />
+	<AboutLocations />
+	<AboutWhy />
+	<AboutContact />
+</Layout>

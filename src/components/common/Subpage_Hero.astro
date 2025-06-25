@@ -1,0 +1,43 @@
+---
+import SecondaryButton from "./Secondary_Button.astro";
+import PrimaryButton from "./Primary_Button.astro";
+import callIcon from "@icons/phone-white.svg";
+import messageIcon from "@icons/contact-white.svg";
+
+const { title, text } = Astro.props;
+---
+
+<section>
+    <div class="container">
+        <h1>{title}</h1>
+        <p>{text}</p>
+        <div class="cta-buttons">
+            <SecondaryButton link="tel:" text="Call Now" icon={callIcon} />
+            <PrimaryButton
+                link="/contact"
+                text="Get a quote"
+                icon={messageIcon}
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--blue);
+        color: white;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    h1 {
+        color: white;
+        font-size: 2.25em;
+    }
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+</style>

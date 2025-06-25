@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import NavLink from "@components/common/NavLink.astro";
+import hamburger from "@icons/hamburger.svg";
+import close from "@icons/close.svg";
+import logo from "@icons/navbar-logo.svg";
+---
+
+<div class="navbar">
+	<a href="/" class="logo-link">
+		<Image src={logo} alt="website logo" class="logo" />
+	</a>
+	<button class="mobile-nav-controls">
+		<Image
+			src={hamburger}
+			alt="open mobile navigation menu"
+			class="open-btn"
+		/>
+		<Image
+			src={close}
+			alt="close mobile navigation menu"
+			class="close-btn"
+		/>
+	</button>
+	<nav>
+		<NavLink href="/">Home</NavLink>
+		<NavLink href="/services">Services</NavLink>
+		<NavLink href="/about">About</NavLink>
+		<NavLink href="/contact">Contact</NavLink>
+	</nav>
+</div>
+
+<style>
+	.logo-link {
+		display: flex;
+		align-items: center;
+	}
+	.logo {
+		width: auto;
+		height: 38px;
+	}
+	.navbar {
+		display: flex;
+		min-height: 58px;
+		align-items: center;
+		padding: 0px 1em;
+		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		box-shadow: 0px 0px 6px #3030302d;
+		background-color: var(--green);
+		box-sizing: border-box;
+		z-index: 10;
+	}
+	.mobile-nav-controls {
+		background-color: transparent;
+		border: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.open-btn {
+		display: block;
+	}
+	.close-btn {
+		display: none;
+		padding-right: 3px;
+	}
+	nav {
+		display: none;
+		position: fixed;
+		background-color: var(--green);
+		box-sizing: border-box;
+		width: 100%;
+		height: calc(100dvh - 58px);
+		top: 58px;
+		left: 0;
+		flex-direction: column;
+		gap: 2em;
+		font-size: 1.6rem;
+		padding: 2em;
+		z-index: -2;
+	}
+
+	@media (min-width: 1024px) {
+		nav {
+			display: flex;
+			position: static;
+			background-color: transparent;
+			flex-direction: row;
+			height: inherit;
+			font-size: 1em;
+			padding: 0px;
+			width: fit-content;
+		}
+		.open-btn {
+			display: none;
+			visibility: hidden;
+		}
+		.navbar {
+			justify-content: space-between;
+			padding: 0px 4em;
+		}
+	}
+</style>
+
+<script>
+	import { gsap } from "gsap";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const mobileNavButton = document.querySelector(".mobile-nav-controls");
+		const nav = document.querySelector("nav");
+		const openBtn = document.querySelector(".open-btn");
+		const closeBtn = document.querySelector(".close-btn");
+
+		let navOpen = false;
+
+		// On load, if in mobile view, ensure the nav is hidden
+		if (window.innerWidth < 1024) {
+			gsap.set(nav, {
+				display: "none",
+				opacity: 0,
+				y: -58,
+			});
+			openBtn.style.display = "block";
+			closeBtn.style.display = "none";
+		}
+
+		// Always attach the event listener
+		mobileNavButton.addEventListener("click", () => {
+			// Only proceed if we're in mobile view
+			if (window.innerWidth >= 1024) return;
+
+			if (!navOpen) {
+				gsap.set(nav, { display: "flex" });
+				gsap.to(nav, {
+					opacity: 1,
+					y: 0,
+					duration: 0.5,
+					ease: "power2.out",
+				});
+				openBtn.style.display = "none";
+				closeBtn.style.display = "block";
+				navOpen = true;
+			} else {
+				gsap.to(nav, {
+					opacity: 0,
+					y: -58,
+					duration: 0.4,
+					ease: "power2.in",
+					onComplete: () => {
+						gsap.set(nav, { display: "none" });
+					},
+				});
+				openBtn.style.display = "block";
+				closeBtn.style.display = "none";
+				navOpen = false;
+			}
+		});
+
+		// On resize, update the nav state so it works correctly when switching between views
+		window.addEventListener("resize", () => {
+			if (window.innerWidth >= 1024) {
+				// Desktop: clear any mobile inline styles
+				gsap.set(nav, { clearProps: "all" });
+				nav.style.display = "";
+				nav.style.opacity = "";
+				nav.style.transform = "";
+				navOpen = false;
+				openBtn.style.display = "none";
+				closeBtn.style.display = "none";
+			} else {
+				// Mobile: if nav is closed, ensure it is hidden
+				if (!navOpen) {
+					gsap.set(nav, { display: "none", opacity: 0, y: -58 });
+					openBtn.style.display = "block";
+					closeBtn.style.display = "none";
+				}
+			}
+		});
+	});
+</script>

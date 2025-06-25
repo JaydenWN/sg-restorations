@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import carrot from "@icons/faq-icon.svg";
+
+const { qaObject } = Astro.props;
+---
+
+<div class="faq">
+    {
+        qaObject.map((qa) => (
+            <details>
+                <span>{qa.a}</span>
+                <summary>
+                    {qa.q}
+                    <Image src={carrot} alt="dropdown" />
+                </summary>
+            </details>
+        ))
+    }
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    section {
+        background-color: var(--light-blue);
+    }
+    details {
+        background-color: var(--blue);
+        color: white;
+        padding: 1rem;
+        border-top: 1px solid var(--brand-blue);
+        line-height: 2rem;
+        font-family: "roboto";
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    summary {
+        display: flex;
+        justify-content: space-between;
+        font-family: "heading";
+        line-height: 1.6rem;
+        font-weight: bold;
+        font-family: "roboto";
+    }
+    details[open] summary {
+        margin-bottom: 1rem;
+    }
+    details[open] summary img {
+        transform: rotate(180deg);
+    }
+    .faq {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    @media (min-width: 1024px) {
+        details {
+            cursor: pointer;
+            width: 50%;
+            margin: 0px auto;
+        }
+    }
+</style>

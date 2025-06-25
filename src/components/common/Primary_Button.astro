@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+
+const { icon, text, link } = Astro.props;
+---
+
+<a href={link}>
+    {icon && <Image src={icon} alt={text} />}
+    {text}
+</a>
+
+<style>
+    a {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-family: "roboto";
+        color: white;
+        text-decoration: none;
+        justify-content: center;
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 0.75rem;
+        background-color: var(--green);
+        border: 1px solid var(--green);
+        border-radius: 3px;
+    }
+</style>

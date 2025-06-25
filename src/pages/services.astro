@@ -1,0 +1,29 @@
+---
+import SubpageHero from "../components/common/Subpage_Hero.astro";
+import ServicesMouldRemoval from "../components/Services/Services_Mould_Removal.astro";
+import ServicesWaterDamage from "../components/Services/Services_Water_Damage.astro";
+import ServicesAssessments from "../components/Services/Services_Assessments.astro";
+import ServicesPrepurchase from "../components/Services/Services_Prepurchase.astro";
+import ServicesAirQuality from "../components/Services/Services_Air_Quality.astro";
+import ServicesSubfloor from "../components/Services/Services_Subfloor.astro";
+import ServicesRoofspace from "../components/Services/Services_Roofspace.astro";
+import ServicesDeepClean from "../components/Services/Services_Deep_Clean.astro";
+import ServicesContact from "../components/Services/Services_Contact.astro";
+import Layout from "../layouts/Base_Layout.astro";
+---
+
+<Layout title="Services" description="Lorem ipsum dolor sit amet">
+    <SubpageHero
+        title="Our Mould and Moisture Services Across the Central Coast and Beyond"
+        text="We offer certified and reliable solutions for mould removal, water damage, and environmental deep cleaning. Whether you're a homeowner, property buyer or real estate professional, SG Restorations is here to help you restore and protect what matters most. We proudly service the Central Coast, Newcastle and Sydney."
+    />
+    <ServicesMouldRemoval />
+    <ServicesWaterDamage />
+    <ServicesAssessments />
+    <ServicesPrepurchase />
+    <ServicesAirQuality />
+    <ServicesSubfloor />
+    <ServicesRoofspace />
+    <ServicesDeepClean />
+    <ServicesContact />
+</Layout>

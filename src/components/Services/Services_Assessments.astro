@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import ServicesWhy from "./Services_Why.astro";
+import serviceImage from "@images/reports-and-insurance.jpg";
+import ServicesCta from "./Services_Cta.astro";
+---
+
+<section>
+    <div class="container">
+        <h2>Assessment Reports and Insurance Support</h2>
+        <p>
+            Dealing with mould or water damage and need to make a claim? We
+            provide clear and detailed assessment reports that support insurance
+            claims, property transactions and tenant concerns. Our reports
+            include moisture readings, photos, and professional recommendations
+            to help you move forward with confidence.
+        </p>
+        <Image
+            src={serviceImage}
+            alt="Central coast mould assessments"
+            class="image"
+        />
+        <ServicesWhy
+            title="Why Choose SG Restorations for Reports and Insurance Support"
+            reasons={[
+                "We understand what insurers and real estate agents need.",
+                "Reports are thorough, honest and easy to understand.",
+                "Support from start to finish, we’re here to help you through it.",
+            ]}
+        />
+        <ServicesCta
+            title="Need Help with Reports or Insurance?"
+            text="Let us handle the paperwork while you focus on what matters. Reach out today."
+        />
+    </div>
+</section>
+
+<style>
+    .image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

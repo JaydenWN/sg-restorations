@@ -1,0 +1,68 @@
+---
+import submitIcon from "@icons/submit-icon.svg";
+import { Image } from "astro:assets";
+---
+
+<form action="">
+    <div class="input-area">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required />
+    </div>
+
+    <div class="input-area">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="name" required />
+    </div>
+
+    <div class="input-area">
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone" required />
+    </div>
+
+    <div class="input-area">
+        <label for="message">Message</label>
+        <textarea rows="12" name="message" id="name" required></textarea>
+    </div>
+
+    <button><Image src={submitIcon} alt="submit form" />Submit Message</button>
+</form>
+
+<style>
+    label {
+        font-family: "roboto";
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .input-area {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    input,
+    textarea {
+        font-size: 1em;
+        padding: 0.5rem;
+        font-family: "paragraph";
+        background-color: var(--bg-blue);
+        border: 1px solid var(--blue);
+        border-radius: 3px;
+    }
+
+    button {
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        background-color: var(--green);
+        color: white;
+        border: 0px;
+        border-radius: 3px;
+        font-family: "roboto";
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+</style>

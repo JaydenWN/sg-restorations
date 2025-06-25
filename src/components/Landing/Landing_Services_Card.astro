@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import PrimaryButton from "../common/Primary_Button.astro";
+import contactIcon from "@icons/contact-white.svg";
+
+const { title, text, ctaText, image } = Astro.props;
+---
+
+<div class="service-card">
+    <Image src={image} alt="" class="image" />
+    <div class="text-content">
+        <h3>{title}</h3>
+        <p>{text}</p>
+        <div class="cta">
+            <PrimaryButton text={ctaText} link="/contact" icon={contactIcon} />
+        </div>
+    </div>
+</div>
+
+<style>
+    .service-card {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--blue);
+        color: white;
+        border-radius: 0px 0px 3px 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    h3 {
+        font-size: 1.25em;
+        color: white;
+    }
+    .image {
+        height: 225px;
+        width: 100%;
+        object-fit: cover;
+    }
+    p {
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .service-card {
+            width: calc(50% - 1rem);
+            box-sizing: border-box;
+        }
+
+        .text-content {
+            padding: 2rem;
+            height: 100%;
+        }
+        .cta {
+            margin-top: auto;
+        }
+    }
+    @media (min-width: 1440px) {
+        .service-card {
+            width: calc(33.3% - 2rem);
+            box-sizing: border-box;
+        }
+
+        .text-content {
+            padding: 3rem;
+        }
+    }
+</style>

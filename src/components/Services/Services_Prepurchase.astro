@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import ServicesWhy from "./Services_Why.astro";
+import serviceImage from "@images/pre-mould-check.jpg";
+import ServicesCta from "./Services_Cta.astro";
+---
+
+<section>
+    <div class="container">
+        <h2>Pre Purchase Mould and Moisture Assessments</h2>
+        <p>
+            Before you buy, make sure your new home is safe and sound. Our pre
+            purchase inspections check for hidden mould, moisture buildup and
+            ventilation issues that often go unnoticed. We give you a clear
+            report so you can make a confident decision without costly surprises
+            later.
+        </p>
+        <Image
+            src={serviceImage}
+            alt="Mould pre purchase checks"
+            class="image"
+        />
+        <ServicesWhy
+            title="Why Choose SG Restorations for Pre Purchase Mould Assessments"
+            reasons={[
+                "Catch hidden problems before they become your responsibility.",
+                "We use professional tools to check inside walls, under floors and in roof spaces.",
+                "Trusted by buyers, agents and property managers across the Central Coast.",
+            ]}
+        />
+        <ServicesCta
+            title="Buying a Property? Know What You’re Getting Into"
+            text="Book your mould and moisture assessment today for peace of mind."
+        />
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-blue);
+    }
+    .image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

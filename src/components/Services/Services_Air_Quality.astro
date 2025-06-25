@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import ServicesWhy from "./Services_Why.astro";
+import serviceImage from "@images/air-quality-sampling.jpg";
+import ServicesCta from "./Services_Cta.astro";
+---
+
+<section>
+    <div class="container">
+        <h2>Air Quality and Surface Sampling Services</h2>
+        <p>
+            If you’re concerned about what you’re breathing in, we can help. Our
+            air quality and surface sampling services identify the presence of
+            mould spores and other contaminants in your home or workplace. We
+            use professional lab testing to give you clear results and practical
+            advice on what to do next.
+        </p>
+        <Image
+            src={serviceImage}
+            alt="Air quality sampling on the central coast"
+            class="image"
+        />
+        <ServicesWhy
+            title="Why Choose SG Restorations for Air and Surface Testing"
+            reasons={[
+                "We use accredited labs for accurate and reliable results.",
+                "Clear explanations and expert advice on next steps.",
+                "Ideal for health-conscious families, renters and real estate professionals.",
+            ]}
+        />
+        <ServicesCta
+            title="Worried About Your Air Quality?"
+            text="Contact us today to book your sampling and breathe easy."
+        />
+    </div>
+</section>
+
+<style>
+    .image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import pinIcon from "@icons/location-pin.svg";
+import SecondaryButton from "../common/Secondary_Button_Blue.astro";
+import PrimaryButton from "../common/Primary_Button.astro";
+import callIcon from "@icons/phone-blue.svg";
+import messageIcon from "@icons/contact-white.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>The Local Mould Removal Experts Near You</h2>
+        <p>
+            SG Restorations proudly services homes and properties across the
+            Central Coast, Newcastle and Sydney.
+        </p>
+        <p>
+            Whether you are in a coastal suburb, the city or somewhere in
+            between, we bring our certified mould and moisture expertise
+            straight to your door. From roof space remediation to pre purchase
+            inspections, we are here to help.
+        </p>
+
+        <div class="locations">
+            <div class="location-box">
+                <div class="location-head">
+                    <Image src={pinIcon} alt="mould removal locations" />
+                    <h3>Central Coast Mould Removal</h3>
+                </div>
+                <p class="location-text">
+                    From Woy Woy to Wyong and everywhere in between, we are your
+                    local choice for safe and reliable mould and moisture
+                    removal across the Central Coast.
+                </p>
+            </div>
+
+            <div class="location-box">
+                <div class="location-head">
+                    <Image src={pinIcon} alt="mould removal locations" />
+                    <h3>Newcastle Mould Removal</h3>
+                </div>
+                <p class="location-text">
+                    We help homeowners, renters and real estate agents across
+                    Newcastle with certified mould remediation, inspections and
+                    moisture control.
+                </p>
+            </div>
+
+            <div class="location-box">
+                <div class="location-head">
+                    <Image src={pinIcon} alt="mould removal locations" />
+                    <h3>Sydney Mould Removal Services</h3>
+                </div>
+                <p class="location-text">
+                    Our team travels throughout Sydney to deliver professional
+                    mould and water damage solutions for homes, apartments and
+                    investment properties.
+                </p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>Not sure if you're in our service area?</h2>
+            <p>
+                Give us a call or send us a quick message. If we can help, we
+                will. And if not, we are always happy to point you in the right
+                direction.
+            </p>
+            <div class="cta-buttons">
+                <SecondaryButton link="tel:" text="Call Now" icon={callIcon} />
+                <PrimaryButton
+                    link="/contact"
+                    text="Get a quote"
+                    icon={messageIcon}
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: #fafdf5;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+    .locations {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .location-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .location-head {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: var(--blue);
+        padding: 1rem;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    .location-head h3 {
+        color: white;
+        font-size: 1.2em;
+    }
+    .location-text {
+        padding: 1rem;
+        background-color: #e5f5ff;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+</style>

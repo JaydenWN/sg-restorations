@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import PrimaryButton from "../common/Primary_Button.astro";
+import SecondaryButton from "../common/Secondary_Button.astro";
+import heroImage from "@images/hero-image.webp";
+import callIcon from "@icons/phone-white.svg";
+import messageIcon from "@icons/contact-white.svg";
+---
+
+<header>
+    <Image src={heroImage} alt="title" class="hero-image" />
+    <div class="container">
+        <h1>Central Coast Mould Removal Experts You Can Trust</h1>
+        <p>
+            At SG Restorations, we specialise in <strong
+                >professional mould removal, moisture assessments, structural
+                drying, air quality analysis, and environmental deep cleaning
+                services.</strong
+            > services across the Central Coast. Whether you're buying a new home,
+            managing a rental, or just want to protect your family’s health, we’re
+            here to help. Family-owned and based in Lisarow, we proudly service the
+            Central Coast, Newcastle, and Sydney regions.
+        </p>
+        <div class="cta-buttons">
+            <SecondaryButton link="tel:" text="Call Now" icon={callIcon} />
+            <PrimaryButton
+                link="/contact"
+                text="Get a quote"
+                icon={messageIcon}
+            />
+        </div>
+    </div>
+</header>
+
+<style>
+    strong {
+        font-weight: bold;
+    }
+    header {
+        position: relative;
+    }
+    .hero-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        color: white;
+    }
+    h1 {
+        font-size: 2.25em;
+        color: white;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        h1 {
+            width: 75%;
+        }
+        p {
+            width: 80%;
+        }
+        .container {
+            gap: 3rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            gap: 4rem;
+        }
+        h1,
+        p {
+            max-width: 600px;
+        }
+    }
+</style>

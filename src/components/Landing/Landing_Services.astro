@@ -1,0 +1,135 @@
+---
+import LandingServicesCard from "./Landing_Services_Card.astro";
+import placeholder from "../../../public/placeholder.svg";
+import mouldRemovalImage from "@images/mould-removal.jpg";
+import waterDamageImage from "@images/water-damage-restoration.jpg";
+import assessmentImage from "@images/reports-and-insurance.jpg";
+import preCheckImage from "@images/pre-mould-check.jpg";
+import airQualityImage from "@images/air-quality-sampling.jpg";
+import subFloorImage from "@images/sub-floor-remediation.png";
+import roofSpaceImage from "@images/roof-space-remediation.jpg";
+import environmentalImage from "@images/environmental-deep-cleaning.jpg";
+---
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Mould and Moisture Services Across the Central Coast</h2>
+            <p>
+                SG Restorations provides a range of mould removal and moisture
+                control services across the Central Coast, Newcastle and Sydney.
+                Whether you're buying a home, managing a property, or just want
+                a safer living space, our family run team is here to help with
+                honest advice and professional results.
+            </p>
+        </div>
+
+        <div class="service-list">
+            <LandingServicesCard
+                title="Mould Removal and Remediation"
+                text="Safe and effective removal of mould from walls, ceilings, and all surfaces with long-term solutions to prevent it from returning."
+                image={mouldRemovalImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Water Damage Restoration"
+                text="From minor leaks to major floods, we clean, dry, and restore damaged areas quickly and professionally."
+                image={waterDamageImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Detailed Assessment Reports and Insurance Support"
+                text="We offer full photo documentation and reports for insurance claims or property management purposes"
+                image={assessmentImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Pre Purchase Mould and Moisture Assessments"
+                text="Before you commit to a property, we carry out a full mould and moisture inspection so you know exactly what to expect. No surprises after the sale."
+                image={preCheckImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Air Quality and Surface Sampling"
+                text="We take air and surface samples to detect both visible and invisible mould, identifying airborne spores, mould species, spore levels and assessing air quality. This helps guide the most effective remediation plan."
+                image={airQualityImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Subfloor Remediation"
+                text="We remove contaminated surface soil, treat affected timbers, and leave the space clean and prepared for proper subfloor ventilation system installation"
+                image={subFloorImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Roof Space Remediation"
+                text="We remove mould from roof spaces using proper treatments and cleaning methods that get to the root of the problem and prevent it from coming back."
+                image={roofSpaceImage}
+                ctaText="Get a quote"
+            />
+
+            <LandingServicesCard
+                title="Environmental Deep Cleaning"
+                text="Perfect for real estate clients or property managers, our deep cleans leave the space fresh, clean and ready for inspections or move in."
+                image={environmentalImage}
+                ctaText="Get a quote"
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-green);
+    }
+    h2 {
+        font-size: 1.65em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .service-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    @media (min-width: 768px) {
+        .section-header {
+            text-align: center;
+            width: 75%;
+            margin: 0px auto;
+            gap: 4rem;
+        }
+        .service-list {
+            gap: 1rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .container {
+            gap: 6rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        /* .service-list {
+            flex-direction: column;
+            gap: 6rem;
+        } */
+        .section-header {
+            width: 50%;
+        }
+    }
+</style>

@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import ServicesWhy from "./Services_Why.astro";
+import mouldRemovalImage from "@images/mould-removal.jpg";
+import ServicesCta from "./Services_Cta.astro";
+---
+
+<section>
+    <div class="container">
+        <h2>Central Coast Mould Removal and Remediation</h2>
+        <p>
+            Mould can damage your property and impact your health if left
+            untreated. At SG Restorations, we identify the source of the
+            problem, safely remove all traces of mould, and apply professional
+            remediation techniques to help prevent it from coming back. We take
+            a thorough and certified approach to ensure your home or workplace
+            is safe, dry and mould free.
+        </p>
+        <Image
+            src={mouldRemovalImage}
+            alt="mould removal remediation central coast"
+            class="image"
+        />
+        <ServicesWhy
+            title="Why Choose SG Restorations for Mould Remediation"
+            reasons={[
+                "We are IICRC certified in professional mould remediation.",
+                "We treat the root cause, not just the visible mould.",
+                "Our family-run team delivers personal and reliable service.",
+            ]}
+        />
+        <ServicesCta
+            title="Say Goodbye to Mould"
+            text="Our family-run team delivers personal and reliable service."
+        />
+    </div>
+</section>
+
+<style>
+    .image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

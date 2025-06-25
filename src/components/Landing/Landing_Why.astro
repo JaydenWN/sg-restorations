@@ -1,0 +1,154 @@
+---
+import SecondaryButtonBlue from "../common/Secondary_Button_Blue.astro";
+import PrimaryButton from "../common/Primary_Button.astro";
+import { Image } from "astro:assets";
+import placeholder from "../../../public/placeholder.svg";
+import callIcon from "@icons/phone-blue.svg";
+import messageIcon from "@icons/contact-white.svg";
+import trophyIcon from "@icons/trophy-icon.svg";
+---
+
+<section>
+    <div class="container">
+        <div class="why-header">
+            <h2>
+                Why Locals Choose SG Restorations for Central Coast Mould
+                Removal
+            </h2>
+            <p>
+                When it comes to mould removal and moisture problems, you want a
+                team that knows what they’re doing and genuinely cares. At SG
+                Restorations, we combine certified expertise with a personal,
+                family friendly approach that makes the process simple and
+                stress free. Whether you're a homeowner, renter, real estate
+                agent or property manager, we’re here to help get your space
+                back to clean and healthy.
+            </p>
+            <div class="cta-buttons">
+                <SecondaryButtonBlue
+                    link="tel:"
+                    text="Call Now"
+                    icon={callIcon}
+                />
+                <PrimaryButton
+                    link="/contact"
+                    text="Get a quote"
+                    icon={messageIcon}
+                />
+            </div>
+        </div>
+
+        <div class="reasons">
+            <div class="reason">
+                <Image src={trophyIcon} alt="" class="image" />
+                <h3>Certified and Experienced</h3>
+                <p>
+                    We bring years of hands on experience and proper
+                    certification to every job, so you can feel confident the
+                    job is done right.
+                </p>
+            </div>
+
+            <div class="reason">
+                <Image src={trophyIcon} alt="" class="image" />
+                <h3>Friendly and Approachable</h3>
+                <p>
+                    We’re a small family business that’s easy to talk to, always
+                    happy to answer questions, and never pushy with sales.
+                </p>
+            </div>
+
+            <div class="reason">
+                <Image src={trophyIcon} alt="" class="image" />
+                <h3>Locals You Can Rely On</h3>
+                <p>
+                    We live and work on the Central Coast and treat every job
+                    like it’s in our own neighbourhood, because often, it is.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    h2 {
+        font-size: 1.65em;
+    }
+    h3 {
+        font-size: 1.35rem;
+    }
+    .why-header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .reasons {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 4rem;
+    }
+    .reason {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+        .reason {
+            width: calc(50% - 2rem);
+            box-sizing: border-box;
+        }
+        .reasons {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4rem;
+            text-align: center;
+        }
+        .image {
+            margin: 0px auto;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 0.65fr 1fr;
+            grid-template-areas: "why-header reasons";
+            gap: 3rem;
+        }
+        .why-header {
+            grid-area: why-header;
+        }
+        .reasons {
+            grid-area: reasons;
+            gap: 2rem;
+            margin-top: 0px;
+        }
+        .reason {
+            width: calc(50% - 1rem);
+        }
+        .image {
+            width: 65px;
+            height: auto;
+        }
+        .cta-buttons {
+            flex-direction: column;
+        }
+    }
+</style>

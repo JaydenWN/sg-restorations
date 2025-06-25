@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import awardIcon from "@icons/trophy-icon.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>Why Choose SG Restorations</h2>
+        <p>
+            When it comes to mould removal and moisture problems, you want a
+            team that knows what they are doing and actually cares. That is
+            where we come in.
+        </p>
+
+        <div class="reasons">
+            <div class="reason">
+                <div class="head">
+                    <Image src={awardIcon} alt="award mould removal" />
+                    <h3>Local and Family Run</h3>
+                </div>
+
+                <p>
+                    We are a small Central Coast business run by people who live
+                    here too. You are not just another job. You are part of our
+                    community.
+                </p>
+            </div>
+
+            <div class="reason">
+                <div class="head">
+                    <Image src={awardIcon} alt="award mould removal" />
+                    <h3>Certified and Experienced</h3>
+                </div>
+
+                <p>
+                    With professional training in mould remediation and water
+                    damage restoration, we follow proven methods that get real
+                    results.
+                </p>
+            </div>
+
+            <div class="reason">
+                <div class="head">
+                    <Image src={awardIcon} alt="award mould removal" />
+                    <h3>Friendly and Honest</h3>
+                </div>
+
+                <p>
+                    We explain things in plain English, show up when we say we
+                    will and always keep you in the loop. No scare tactics. No
+                    pressure.
+                </p>
+            </div>
+
+            <div class="reason">
+                <div class="head">
+                    <Image src={awardIcon} alt="award mould removal" />
+                    <h3>Personal Service</h3>
+                </div>
+
+                <p>
+                    We treat your home like our own, whether it is a small patch
+                    of mould or a full roof space remediation.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 2rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .reason {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    .reasons {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+</style>

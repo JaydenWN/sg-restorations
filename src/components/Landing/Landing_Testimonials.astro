@@ -1,0 +1,169 @@
+---
+import LandingTestimonialsCard from "./Landing_Testimonials_Card.astro";
+import nextIcon from "@icons/next-icon.svg";
+import prevIcon from "@icons/prev-icon.svg";
+import { Image } from "astro:assets";
+---
+
+<section>
+    <div class="container">
+        <div class="header">
+            <h2>What The Central Coast Say About Our Mould Removal Services</h2>
+            <p>
+                We’re proud to help families, homeowners and property managers
+                across the Central Coast, Newcastle and Sydney. Here’s what some
+                of our happy clients have to say about working with SG
+                Restorations.
+            </p>
+        </div>
+        <div class="embla">
+            <div class="embla__viewport">
+                <div class="embla__container">
+                    <div class="embla__slide">
+                        <LandingTestimonialsCard
+                            quote="I was really impressed with how quickly the team found the source of our mould problem and got it sorted. They explained everything in plain English and left the place spotless. Highly recommend"
+                            quotee="Jess T from Bateau Bay"
+                            title="Friendly, fast and professional"
+                        />
+                    </div>
+
+                    <div class="embla__slide">
+                        <LandingTestimonialsCard
+                            quote="Integer aliquam eget velit sodales tincidunt. Pellentesque non risus at justo sollicitudin tortor et placerat. Fusce vestibulum commodo porta. Nulla facilisi. Quisque in nunc bibendum, semper nibh a, egestas est. Vestibulum a massa lectus. Quisque vulputate dolor sit amet ligula hendrerit, sed pretium nibh molestie."
+                            quotee="Doroler amet"
+                            title="facilisis erat."
+                        />
+                    </div>
+
+                    <div class="embla__slide">
+                        <LandingTestimonialsCard
+                            quote="Integer aliquam eget velit sodales tincidunt. et placerat. Fusce vestibulum commodo porta. Nulla facilisi. Quisque in nunc bibendum, semper nibh a, egestas est. Vestibulum a massa lectus. Quisque vulputate dolor sit amet ligula hendrerit, sed pretium nibh molestie."
+                            quotee="Doroler amet"
+                            title="facilisis erat."
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="embla__buttons">
+                <button class="embla__button embla__button--prev" id="prevBtn">
+                    <Image src={prevIcon} alt="previous slide" /></button
+                >
+                <button class="embla__button embla__button--next" id="nextBtn"
+                    ><Image src={nextIcon} alt="next slide" /></button
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-green);
+    }
+    h2 {
+        font-size: 1.65em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .embla {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .embla__viewport {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .embla__container {
+        display: flex;
+    }
+
+    .embla__slide {
+        position: relative;
+        flex: 0 0 100%;
+        min-width: 0;
+        padding: 1rem;
+    }
+
+    .embla__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .embla__button {
+        color: white;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        cursor: pointer;
+        background-color: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .embla__button:hover {
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+        .header {
+            text-align: center;
+        }
+        .header p {
+            width: 60%;
+            margin: 0px auto;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-areas: "header embla";
+            gap: 2rem;
+        }
+        .header {
+            grid-area: header;
+            text-align: left;
+        }
+        .header p {
+            width: 100%;
+        }
+        .embla {
+            grid-area: embla;
+        }
+        .embla__slide {
+            padding-top: 0px;
+        }
+    }
+</style>
+
+<script>
+    import emblaCarousel from "embla-carousel";
+
+    const viewport = document.querySelector(".embla__viewport");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    const embla = emblaCarousel(viewport, { loop: true });
+
+    prevBtn.addEventListener("click", () => embla.scrollPrev());
+    nextBtn.addEventListener("click", () => embla.scrollNext());
+</script>

@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import sgIcon from "@icons/sg-logo.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>About SG Restorations</h2>
+        <p>
+            SG Restorations is a small family run business proudly serving the
+            Central Coast, Newcastle and Sydney. We specialise in mould removal,
+            moisture remediation and property restoration with a focus on
+            honesty, reliability and care.
+        </p>
+        <p>
+            After years working in a large corporate restoration company, Steve
+            decided it was time to do things differently. He set out to build a
+            business where people come first, not profit margins. At SG
+            Restorations, every job is personal. We take the time to explain the
+            issue, walk you through the solution and treat your home with the
+            same respect we would our own.
+        </p>
+        <Image
+            src={sgIcon}
+            alt="SG Restorations mould removal central coast"
+            class="image"
+        />
+        <p>
+            We know how stressful mould and water damage can be, especially when
+            it puts your family's health at risk. That is why we show up on
+            time, communicate clearly and work thoroughly to restore comfort,
+            safety and peace of mind.
+        </p>
+        <p>
+            Whether it is a small surface issue or a full roof space
+            remediation, you can count on SG Restorations for honest advice and
+            dependable service.
+        </p>
+    </div>
+</section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .image {
+        margin: 0px auto;
+    }
+</style>

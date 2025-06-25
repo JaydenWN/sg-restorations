@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import placeholder from "../../../public/placeholder.svg";
+import valueImageReliable from "@icons/value-reliable.svg";
+import valueImageFamily from "@icons/value-family.svg";
+import valueImageLocal from "@icons/value-local.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>Trusted Values Behind Our Mould Removal Services</h2>
+        <div class="values">
+            <div class="value">
+                <Image src={valueImageReliable} alt="" class="value-image" />
+                <h3>Reliable Every Time</h3>
+                <p>
+                    You can count on us to show up, do the job properly, and
+                    keep you informed from start to finish.
+                </p>
+            </div>
+
+            <div class="value">
+                <Image src={valueImageFamily} alt="" class="value-image" />
+                <h3>Family First Approach</h3>
+                <p>
+                    As a family run business, we treat every home like our own
+                    and always put health and safety first, especially for
+                    families with kids.
+                </p>
+            </div>
+
+            <div class="value">
+                <Image src={valueImageLocal} alt="" class="value-image" />
+                <h3>Local and Community Focused</h3>
+                <p>
+                    We’re proud to be a Central Coast business, committed to
+                    helping our neighbours across the Central Coast, Newcastle
+                    and Sydney.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-green);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    h2 {
+        font-size: 1.65em;
+    }
+    h3 {
+        font-size: 1.35em;
+    }
+    .value {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .value p {
+        width: 80%;
+    }
+    .value-image {
+        width: 180px;
+        height: auto;
+        object-fit: cover;
+    }
+    .values {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    @media (min-width: 768px) {
+        .value p {
+            grid-area: value-text;
+            width: 380px;
+        }
+        h3 {
+            grid-area: title;
+        }
+        .value-image {
+            width: 140px;
+            height: auto;
+            grid-area: image;
+            margin-right: 1rem;
+        }
+        .value {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-areas:
+                "image title"
+                "image value-text";
+            text-align: left;
+        }
+        .values {
+            gap: 6rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .value {
+            width: calc(50% - 2rem);
+            box-sizing: border-box;
+        }
+        .value p {
+            width: auto;
+        }
+        .values {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+        .container {
+            gap: 6rem;
+        }
+    }
+</style>

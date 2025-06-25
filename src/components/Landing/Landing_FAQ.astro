@@ -1,0 +1,59 @@
+---
+import FAQ from "../common/FAQ.astro";
+
+const qaObject = [
+    {
+        q: "What is causing mould in my home?",
+        a: "Mould is caused by excess moisture Often it's due to poor ventilation roof leaks rising damp or even condensation from everyday activities like cooking and showering We carry out full assessments to find the exact cause and stop it at the source.",
+    },
+    {
+        q: "Is mould dangerous?",
+        a: "Yes, mould can be harmful to your health. It can trigger respiratory issues, allergies, skin irritation, and worsen asthma symptoms. Certain types of mould can produce toxins, so it's important to address the issue properly rather than ignore it. Our certified team ensures safe and effective Central Coast mould removal for your home or business.",
+    },
+    {
+        q: "Can I just wipe mould off myself?",
+        a: "Wiping mould off surfaces might remove the visible part, but it doesn't fix the underlying issue. In many cases, mould roots into porous materials and will come back if the moisture problem isn’t addressed. Our remediation service makes sure the mould is removed safely and doesn’t return.",
+    },
+    {
+        q: "Do I need to leave the house during treatment?",
+        a: "It depends on the extent of the mould and the treatment method required. For minor jobs, you can often stay home with some precautions. For larger or more sensitive projects, especially involving children or those with health concerns, we may recommend stepping out during treatment. We’ll always keep you informed so you can plan ahead.",
+    },
+    {
+        q: "How long does mould removal take?",
+        a: "Every job is different, but most standard mould removal treatments can be completed within a day. More severe or widespread issues, like roof space or subfloor remediation, may take a bit longer. After an assessment, we’ll give you a clear timeline so you know what to expect.",
+    },
+];
+---
+
+<section>
+    <div class="container">
+        <h2>Frequently Asked Questions About Mould and Moisture</h2>
+        <FAQ qaObject={qaObject} class="faq" />
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 1.65em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 2rem;
+        }
+
+        .faq {
+            grid-area: faq;
+        }
+        h2 {
+            grid-area: title;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+</style>

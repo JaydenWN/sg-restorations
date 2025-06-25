@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import checkIcon from "@icons/check-green.svg";
+---
+
+<section>
+    <div class="container">
+        <h2>Our Values at SG Restorations</h2>
+
+        <div class="values">
+            <div class="value">
+                <div class="header">
+                    <Image src={checkIcon} alt="why us for mould removal" />
+                    <h3>Reliable Every Time</h3>
+                </div>
+                <p>
+                    When you book with us, you can count on us to show up on
+                    time, do what we say we will, and follow through until your
+                    home is safe and clean. No surprises and no stress.
+                </p>
+            </div>
+
+            <div class="value">
+                <div class="header">
+                    <Image src={checkIcon} alt="why us for mould removal" />
+                    <h3>Family First Approach</h3>
+                </div>
+                <p>
+                    We treat your home the way we would treat our own. As a
+                    family run business, we understand the importance of
+                    creating a healthy space for the people you care about most.
+                </p>
+            </div>
+
+            <div class="value">
+                <div class="header">
+                    <Image src={checkIcon} alt="why us for mould removal" />
+                    <h3>Local and Community Focused</h3>
+                </div>
+                <p>
+                    We’re locals too, and we care about the people we work with.
+                    You are not just a job, you are part of the same community
+                    we live in and raise our families in. We are here to help
+                    however we can.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-green);
+    }
+    .header {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    h3 {
+        font-size: 1.25em;
+    }
+    .value {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .values {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+    }
+</style>

@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import ServicesWhy from "./Services_Why.astro";
+import serviceImage from "@images/water-damage-restoration.jpg";
+import ServicesCta from "./Services_Cta.astro";
+---
+
+<section>
+    <div class="container">
+        <h2>Water Damage Restoration Central Coast</h2>
+        <p>
+            Water damage can quickly lead to mould, structural issues and
+            expensive repairs. SG Restorations provides fast and effective water
+            damage restoration for homes and businesses. Whether it's from a
+            burst pipe, stormwater or a leak, we act quickly to dry out the
+            space, prevent mould growth and restore the area to its original
+            condition.
+        </p>
+        <Image
+            src={serviceImage}
+            alt="Water Damage restoration on the central coast"
+            class="image"
+        />
+        <ServicesWhy
+            title="Why Choose SG Restorations for Water Damage Restoration"
+            reasons={[
+                "Rapid response when you need it most.",
+                "Certified in water damage restoration through IICRC S500.",
+                "We handle the full process from start to finish.",
+            ]}
+        />
+        <ServicesCta
+            title="Got Water Damage? Let’s Fix It!"
+            text="Contact us now for fast and reliable water damage restoration."
+        />
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-blue);
+    }
+    .image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>

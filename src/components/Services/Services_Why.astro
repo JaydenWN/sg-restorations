@@ -1,0 +1,49 @@
+---
+const { title, reasons } = Astro.props;
+import { Image } from "astro:assets";
+import checkmarkIcon from "@icons/check-green.svg";
+---
+
+<div class="why">
+    <h3>{title}</h3>
+    <ul>
+        {
+            reasons.map((reason) => (
+                <li>
+                    <Image
+                        src={checkmarkIcon}
+                        alt="mould checkmark"
+                        class="icon"
+                    />
+                    {reason}
+                </li>
+            ))
+        }
+    </ul>
+</div>
+
+<style>
+    .icon {
+        width: 38px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    li {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-family: "roboto";
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    .why {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+</style>

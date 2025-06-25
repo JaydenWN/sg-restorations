@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import tickIcon from "@icons/tick-white.svg";
+import certImage from "@images/iicrc-image.jpg";
+---
+
+<section>
+    <div class="container">
+        <h2>Certified Mould Removal for Central Coast Homes</h2>
+        <Image src={certImage} alt="iicrc mould certified" class="cert-image" />
+        <p>
+            You deserve to feel confident in the team working on your home. At
+            SG Restorations, we hold industry recognised certifications to
+            ensure every job is handled safely and to the highest standard. We
+            are trained and certified in:
+        </p>
+
+        <div class="cert-box">
+            <div class="header">
+                <Image src={tickIcon} alt="certified mould removal services" />
+                <p>IICRC S500</p>
+            </div>
+            <p>Professional Water Damage Restoration</p>
+        </div>
+
+        <div class="cert-box">
+            <div class="header">
+                <Image src={tickIcon} alt="certified mould removal services" />
+                <p>IICRC S520</p>
+            </div>
+            <p>Professional Mould Remediation</p>
+        </div>
+        <p>
+            These certifications mean we follow the latest industry standards
+            for safe, effective mould and moisture removal. From identifying the
+            source of the problem to restoring your space, you can trust that we
+            do things properly from start to finish.
+        </p>
+    </div>
+</section>
+
+<style>
+    h2 {
+        font-size: 2rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cert-image {
+        width: 120px;
+        height: auto;
+        margin: 0px auto;
+    }
+    .cert-box {
+        background-color: var(--green);
+        border-radius: 3px;
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    .header {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+</style>

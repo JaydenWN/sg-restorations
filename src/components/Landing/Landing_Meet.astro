@@ -1,0 +1,149 @@
+---
+import { Image } from "astro:assets";
+import familyImage from "@images/family-image.jpg";
+import tickIcon from "@icons/tick-blue.svg";
+import iicrcImage from "@images/iicrc-image.jpg";
+---
+
+<section>
+    <div class="container">
+        <h2>Meet the Team Behind SG Restorations</h2>
+        <p>
+            SG Restorations, a local family run business on the Central Coast
+            offering honest, hands on mould and moisture remediation. After
+            years in large corporate restoration, we saw the need for a more
+            personal approach. Today, we help families, renters, property
+            managers and business owners across the Central Coast, Newcastle and
+            Sydney restore clean, healthy spaces with the same care we would
+            give our own homes.
+        </p>
+        <Image src={familyImage} alt="" class="image" />
+        <div class="mission">
+            <h3>Restoration with Respect</h3>
+            <p>
+                Our mission is simple: to help locals live and work in cleaner,
+                safer spaces. We aim to make the process of mould removal and
+                moisture treatment straightforward and stress free with honest
+                advice, reliable service, and results you can trust.
+            </p>
+        </div>
+
+        <div class="certified">
+            <h3>Certified and Experienced Mould Remediation Professionals</h3>
+            <p>
+                When it comes to mould and moisture issues, you need more than
+                just a quick fix. you need qualified professionals who
+                understand how to do the job right. At SG Restorations, we bring
+                real experience, industry recognised training, and a commitment
+                to doing things properly from the start. We follow proven
+                methods and safety standards to ensure your home or property is
+                treated with care and expertise.
+            </p>
+            <Image src={iicrcImage} alt="" class="cert-image" />
+            <div class="certified-check">
+                <Image src={tickIcon} alt="" />
+                <p>
+                    Trained and certified in IICRC S500 – Professional Water
+                    Damage Restoration
+                </p>
+            </div>
+
+            <div class="certified-check">
+                <Image src={tickIcon} alt="" />
+                <p>
+                    Qualified under IICRC S520 – Professional Mould Remediation
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+    }
+    .cert-image {
+        width: 130px;
+        height: auto;
+        margin: 1rem auto;
+    }
+    .mission,
+    .certified {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .certified {
+        margin-top: 2rem;
+    }
+    .certified-check {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-weight: bold;
+        color: var(--blue);
+    }
+    h2 {
+        font-size: 1.65em;
+        color: var(--blue);
+    }
+    h3 {
+        color: var(--blue);
+        font-size: 1.35em;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "text-content image"
+                "mission mission"
+                "certified certified";
+        }
+        h2 {
+            grid-area: title;
+            width: 75%;
+        }
+        p:first-of-type {
+            grid-area: text-content;
+        }
+        .mission {
+            grid-area: mission;
+            margin-top: 4rem;
+        }
+        .certified {
+            grid-area: certified;
+        }
+
+        .image {
+            grid-area: image;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            grid-template-areas:
+                "title  image"
+                "text-content  image"
+                "mission image"
+                "certified certified";
+            gap: 4rem;
+        }
+        h2 {
+            width: 100%;
+            margin-bottom: -2rem;
+        }
+    }
+</style>
