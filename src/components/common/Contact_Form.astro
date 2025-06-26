@@ -3,25 +3,34 @@ import submitIcon from "@icons/submit-icon.svg";
 import { Image } from "astro:assets";
 ---
 
-<form action="">
+<form action="https://formspree.io/f/xzzgkoer" method="POST">
     <div class="input-area">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required />
+        <label for="name"
+            >Name
+            <input type="text" name="name" id="name" required />
+        </label>
     </div>
 
     <div class="input-area">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="name" required />
+        <label for="email"
+            >Email
+            <input type="email" name="email" id="name" required />
+        </label>
     </div>
 
     <div class="input-area">
-        <label for="phone">Phone</label>
-        <input type="tel" name="phone" id="phone" required />
+        <label for="phone"
+            >Phone
+            <input type="tel" name="phone" id="phone" required />
+        </label>
     </div>
 
     <div class="input-area">
-        <label for="message">Message</label>
-        <textarea rows="12" name="message" id="name" required></textarea>
+        <label for="message"
+            >Message
+            <textarea rows="12" name="message" id="name" required
+            ></textarea></label
+        >
     </div>
 
     <button><Image src={submitIcon} alt="submit form" />Submit Message</button>
@@ -36,7 +45,8 @@ import { Image } from "astro:assets";
         flex-direction: column;
         gap: 2rem;
     }
-    .input-area {
+    .input-area,
+    label {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
