@@ -5,7 +5,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://sg-restorations.vercel.app/",
+	site: "https://sgrestorations.com.au",
+		output: "static",
 	integrations: [mdx(), sitemap()],
 	vite: {
 		resolve: {
