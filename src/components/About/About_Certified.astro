@@ -8,29 +8,37 @@ import certImage from "@images/iicrc-image.jpg";
     <div class="container">
         <h2>Certified Mould Removal for Central Coast Homes</h2>
         <Image src={certImage} alt="iicrc mould certified" class="cert-image" />
-        <p>
+        <p class="p1">
             You deserve to feel confident in the team working on your home. At
             SG Restorations, we hold industry recognised certifications to
             ensure every job is handled safely and to the highest standard. We
             are trained and certified in:
         </p>
 
-        <div class="cert-box">
-            <div class="header">
-                <Image src={tickIcon} alt="certified mould removal services" />
-                <p>IICRC S500</p>
+        <div class="certs">
+            <div class="cert-box">
+                <div class="header">
+                    <Image
+                        src={tickIcon}
+                        alt="certified mould removal services"
+                    />
+                    <p>IICRC S500</p>
+                </div>
+                <p>Professional Water Damage Restoration</p>
             </div>
-            <p>Professional Water Damage Restoration</p>
-        </div>
 
-        <div class="cert-box">
-            <div class="header">
-                <Image src={tickIcon} alt="certified mould removal services" />
-                <p>IICRC S520</p>
+            <div class="cert-box">
+                <div class="header">
+                    <Image
+                        src={tickIcon}
+                        alt="certified mould removal services"
+                    />
+                    <p>IICRC S520</p>
+                </div>
+                <p>Professional Mould Remediation</p>
             </div>
-            <p>Professional Mould Remediation</p>
         </div>
-        <p>
+        <p class="p2">
             These certifications mean we follow the latest industry standards
             for safe, effective mould and moisture removal. From identifying the
             source of the problem to restoring your space, you can trust that we
@@ -66,5 +74,65 @@ import certImage from "@images/iicrc-image.jpg";
         gap: 1rem;
         align-items: center;
         margin-bottom: 1rem;
+    }
+    .certs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        h2 {
+            grid-area: title;
+        }
+        .cert-image {
+            grid-area: image;
+        }
+        .p1 {
+            grid-area: p1;
+        }
+        .p2 {
+            grid-area: p2;
+        }
+        .certs {
+            grid-area: certs;
+        }
+        .container {
+            display: grid;
+            gap: 4rem;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "image p1"
+                "certs certs"
+                "p2 p2";
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .certs {
+            flex-direction: row;
+        }
+        .cert-box {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .container {
+            gap: 2rem;
+            grid-template-columns: 0.65fr 0.8fr;
+            grid-template-areas:
+                "title title"
+                "image p1"
+                "image certs"
+                "image p2";
+        }
+        .cert-image {
+            width: 210px;
+        }
+        h2 {
+            margin-bottom: 4rem;
+        }
     }
 </style>

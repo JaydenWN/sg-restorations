@@ -20,18 +20,22 @@ import ServicesCta from "./Services_Cta.astro";
             alt="Air quality sampling on the central coast"
             class="image"
         />
-        <ServicesWhy
-            title="Why Choose SG Restorations for Air and Surface Testing"
-            reasons={[
-                "We use accredited labs for accurate and reliable results.",
-                "Clear explanations and expert advice on next steps.",
-                "Ideal for health-conscious families, renters and real estate professionals.",
-            ]}
-        />
-        <ServicesCta
-            title="Worried About Your Air Quality?"
-            text="Contact us today to book your sampling and breathe easy."
-        />
+        <div class="why">
+            <ServicesWhy
+                title="Why Choose SG Restorations for Air and Surface Testing"
+                reasons={[
+                    "We use accredited labs for accurate and reliable results.",
+                    "Clear explanations and expert advice on next steps.",
+                    "Ideal for health-conscious families, renters and real estate professionals.",
+                ]}
+            />
+        </div>
+        <div class="cta">
+            <ServicesCta
+                title="Worried About Your Air Quality?"
+                text="Contact us today to book your sampling and breathe easy."
+            />
+        </div>
     </div>
 </section>
 
@@ -50,5 +54,54 @@ import ServicesCta from "./Services_Cta.astro";
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+    @media (min-width: 768px) {
+        h2 {
+            grid-area: title;
+        }
+        .p1 {
+            grid-area: p1;
+        }
+        .image {
+            grid-area: image;
+        }
+        .why {
+            grid-area: why;
+        }
+        .cta {
+            margin-top: 2rem;
+            grid-area: cta;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "p1 image"
+                "why cta";
+        }
+    }
+    @media (min-width: 1024px) {
+        .container {
+            gap: 4rem;
+        }
+    }
+    @media (min-width: 1440px) {
+        .container {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .image {
+            height: 400px;
+            width: 400px;
+            margin-left: auto;
+        }
+        .cta {
+            width: 400px;
+            margin-left: auto;
+        }
+        h2 {
+            margin-bottom: 4rem;
+        }
     }
 </style>

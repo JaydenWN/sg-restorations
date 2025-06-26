@@ -12,7 +12,11 @@ const { title, text } = Astro.props;
         <h1>{title}</h1>
         <p>{text}</p>
         <div class="cta-buttons">
-            <SecondaryButton link="tel:" text="Call Now" icon={callIcon} />
+            <SecondaryButton
+                link="tel:0413 470 368"
+                text="Call Now"
+                icon={callIcon}
+            />
             <PrimaryButton
                 link="/contact"
                 text="Get a quote"
@@ -39,5 +43,23 @@ const { title, text } = Astro.props;
     .cta-buttons {
         display: flex;
         gap: 1rem;
+    }
+    @media (min-width: 1024px) {
+        h1 {
+            width: 75%;
+        }
+        p {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        h1,
+        p {
+            width: 600px;
+        }
+        .container {
+            gap: 4rem;
+        }
     }
 </style>

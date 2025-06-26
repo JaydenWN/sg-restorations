@@ -5,7 +5,7 @@
 <section>
     <div class="container">
         <h2>Our Working Hours</h2>
-        <p>
+        <p class="p1">
             You can reach SG Restorations Monday to Saturday between 8am and
             5pm. We know mould and moisture issues can’t always wait, so if
             you’ve got an urgent problem outside these hours, we’ll do our best
@@ -59,5 +59,56 @@
     }
     h3 {
         font-size: 1.5em;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+    }
+
+    /* @media (min-width: 1024px) {
+        .hours {
+            text-align: center;
+            max-width: 300px;
+        }
+        h3 {
+            text-align: left;
+            margin: 2rem 0px;
+        }
+    } */
+
+    @media (min-width: 1024px) {
+        .container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-areas:
+                "title title"
+                "p1 hours";
+            gap: 2rem;
+        }
+        h3 {
+            grid-area: title;
+            margin: 0px;
+        }
+        .p1 {
+            grid-area: p1;
+        }
+        .hours {
+            grid-area: hours;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 3px;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .container {
+            grid-template-columns: 30% 70%;
+        }
+        .hours {
+            margin-left: 6rem;
+            max-width: 380px;
+        }
     }
 </style>

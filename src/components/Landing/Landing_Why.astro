@@ -26,7 +26,7 @@ import trophyIcon from "@icons/trophy-icon.svg";
             </p>
             <div class="cta-buttons">
                 <SecondaryButtonBlue
-                    link="tel:"
+                    link="tel:0413 470 368"
                     text="Call Now"
                     icon={callIcon}
                 />
@@ -119,6 +119,9 @@ import trophyIcon from "@icons/trophy-icon.svg";
             flex-wrap: wrap;
             gap: 4rem;
             text-align: center;
+            background-color: var(--bg-blue);
+            padding: 1rem;
+            border-radius: 3px;
         }
         .image {
             margin: 0px auto;
@@ -139,6 +142,7 @@ import trophyIcon from "@icons/trophy-icon.svg";
             grid-area: reasons;
             gap: 2rem;
             margin-top: 0px;
+            padding: 2rem;
         }
         .reason {
             width: calc(50% - 1rem);
@@ -148,7 +152,7 @@ import trophyIcon from "@icons/trophy-icon.svg";
             height: auto;
         }
         .cta-buttons {
-            flex-direction: column;
+            flex-direction: row;
         }
     }
 </style>

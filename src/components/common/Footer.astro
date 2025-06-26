@@ -16,13 +16,15 @@ import { Image } from "astro:assets";
 						<a href="/">Home</a>
 					</li>
 					<li>
-						<a href="/">Services</a>
+						<a href="/central-coast-mould-services">Services</a>
 					</li>
 					<li>
-						<a href="/">About</a>
+						<a href="/about-sg-restorations">About</a>
 					</li>
 					<li>
-						<a href="/">Contact</a>
+						<a href="/contact-central-coast-mould-removal"
+							>Contact</a
+						>
 					</li>
 				</ul>
 			</div>
@@ -41,8 +43,8 @@ import { Image } from "astro:assets";
 
 			<div class="contact-details">
 				<h3>Contact Details</h3>
-				<a href="tel:">0413 470 368 </a>
-				<a href="mailto:">steve@sgrestorations</a>
+				<a href="tel:0413 470 368">0413 470 368 </a>
+				<a href="mailto:steve@sgrestorations">steve@sgrestorations</a>
 			</div>
 		</div>
 		<span class="beachside-link">
@@ -127,6 +129,11 @@ import { Image } from "astro:assets";
 		.contact-details a:first-of-type {
 			margin-bottom: 1rem;
 			display: block;
+		}
+	}
+	@media (min-width: 1440px) {
+		li {
+			font-size: 1rem;
 		}
 	}
 </style>

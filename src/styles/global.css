@@ -176,4 +176,8 @@ p, a {
 		width: 1280px;
 		margin: 0px auto;
 	}
+	p, a, li{
+		font-size: 1.2em;
+	}
+	
 }

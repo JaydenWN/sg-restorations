@@ -11,7 +11,9 @@ import ContactForm from "../common/Contact_Form.astro";
             Whether it’s for a property inspection, moisture issue or mould
             remediation, we’re here to help.
         </p>
-        <ContactForm />
+        <div class="contact-form">
+            <ContactForm />
+        </div>
     </div>
 </section>
 
@@ -23,5 +25,34 @@ import ContactForm from "../common/Contact_Form.astro";
         display: flex;
         flex-direction: column;
         gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+        .contact-form {
+            width: 65%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        h2 {
+            grid-area: title;
+        }
+        p {
+            grid-area: p1;
+        }
+        .contact-form {
+            width: 100%;
+            grid-area: contact;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "p1 contact";
+        }
     }
 </style>

@@ -6,7 +6,7 @@ import awardIcon from "@icons/trophy-icon.svg";
 <section>
     <div class="container">
         <h2>Why Choose SG Restorations</h2>
-        <p>
+        <p class="p1">
             When it comes to mould removal and moisture problems, you want a
             team that knows what they are doing and actually cares. That is
             where we come in.
@@ -88,5 +88,34 @@ import awardIcon from "@icons/trophy-icon.svg";
         display: flex;
         flex-direction: column;
         gap: 4rem;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            text-align: center;
+        }
+        .reason {
+            width: calc(50% - 2rem);
+            box-sizing: border-box;
+        }
+        .reasons {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .p1 {
+            width: 70%;
+            margin: 0px auto 2rem auto;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .reason {
+            width: 100%;
+        }
+        .reasons {
+            gap: 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
 </style>

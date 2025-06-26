@@ -6,13 +6,13 @@ import sgIcon from "@icons/sg-logo.svg";
 <section>
     <div class="container">
         <h2>About SG Restorations</h2>
-        <p>
+        <p class="p1">
             SG Restorations is a small family run business proudly serving the
             Central Coast, Newcastle and Sydney. We specialise in mould removal,
             moisture remediation and property restoration with a focus on
             honesty, reliability and care.
         </p>
-        <p>
+        <p class="p2">
             After years working in a large corporate restoration company, Steve
             decided it was time to do things differently. He set out to build a
             business where people come first, not profit margins. At SG
@@ -25,13 +25,13 @@ import sgIcon from "@icons/sg-logo.svg";
             alt="SG Restorations mould removal central coast"
             class="image"
         />
-        <p>
+        <p class="p3">
             We know how stressful mould and water damage can be, especially when
             it puts your family's health at risk. That is why we show up on
             time, communicate clearly and work thoroughly to restore comfort,
             safety and peace of mind.
         </p>
-        <p>
+        <p class="p4">
             Whether it is a small surface issue or a full roof space
             remediation, you can count on SG Restorations for honest advice and
             dependable service.
@@ -50,5 +50,61 @@ import sgIcon from "@icons/sg-logo.svg";
     }
     .image {
         margin: 0px auto;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            gap: 4rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .p1 {
+            grid-area: p1;
+        }
+        .p2 {
+            grid-area: p2;
+        }
+        .p3 {
+            grid-area: p3;
+        }
+        .p4 {
+            grid-area: p4;
+        }
+        .image {
+            grid-area: image;
+            margin: auto auto;
+            width: 100%;
+            height: auto;
+        }
+        h2 {
+            grid-area: title;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "p1 image"
+                "p2 image"
+                "p3 p4";
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .container {
+            grid-template-areas:
+                "title title"
+                "image p1"
+                "image p2"
+                "p3 p4";
+            gap: 2rem;
+        }
+        h2 {
+            margin-bottom: 4rem;
+        }
+        .image {
+            width: 235px;
+        }
     }
 </style>

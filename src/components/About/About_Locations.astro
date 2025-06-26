@@ -10,11 +10,11 @@ import messageIcon from "@icons/contact-white.svg";
 <section>
     <div class="container">
         <h2>The Local Mould Removal Experts Near You</h2>
-        <p>
+        <p class="p1">
             SG Restorations proudly services homes and properties across the
             Central Coast, Newcastle and Sydney.
         </p>
-        <p>
+        <p class="p2">
             Whether you are in a coastal suburb, the city or somewhere in
             between, we bring our certified mould and moisture expertise
             straight to your door. From roof space remediation to pre purchase
@@ -67,7 +67,11 @@ import messageIcon from "@icons/contact-white.svg";
                 direction.
             </p>
             <div class="cta-buttons">
-                <SecondaryButton link="tel:" text="Call Now" icon={callIcon} />
+                <SecondaryButton
+                    link="tel:0413 470 368"
+                    text="Call Now"
+                    icon={callIcon}
+                />
                 <PrimaryButton
                     link="/contact"
                     text="Get a quote"
@@ -127,5 +131,70 @@ import messageIcon from "@icons/contact-white.svg";
     .cta-buttons {
         display: flex;
         gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        h2 {
+            grid-area: title;
+        }
+        .cta {
+            grid-area: cta;
+            margin-top: 4rem;
+        }
+
+        .locations {
+            grid-area: locations;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .location-box {
+            width: calc(50% - 0.5rem);
+        }
+        .location-text {
+            padding: 2rem;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title title"
+                "p1 p2"
+                "locations locations"
+                "cta cta";
+        }
+        .p1 {
+            grid-area: p1;
+        }
+        .p2 {
+            grid-area: p2;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .cta {
+            width: 70%;
+        }
+        .p1,
+        .p2 {
+            width: 60%;
+        }
+        .p1 {
+            margin-bottom: -2rem;
+        }
+        .container {
+            grid-template-areas:
+                "title title"
+                "p1 p1"
+                "p2 p2"
+                "locations locations"
+                "cta cta";
+        }
+        .location-box {
+            width: calc(33% - 1rem);
+        }
+        .location-text {
+            height: 100%;
+        }
     }
 </style>
